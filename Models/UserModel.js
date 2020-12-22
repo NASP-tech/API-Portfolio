@@ -1,27 +1,27 @@
-const { Schema, model} = require('mongoose')
+const { Schema, model } = require('mongoose')
 
 var UserSchema = Schema({
     fullname: {
         type: "String",
-        require: true
+        required: true
     },
     username: {
         type: "String",
-        require: true,
+        required: true,
         unique: true,
         min: 7
     },
     email: {
         type: "String",
-        require: true,
+        required: true,
         unique: true
     },
     password: {
         type: "String",
-        require: true
+        required: true
     },
     phone: "String",
-    //Date of Birth
+    //Date of birth
     dob: "Date"
 })
 

@@ -22,7 +22,7 @@ const Validator = {
 
         return ValidateSchema.validateAsync(data)
     },
-
+    
     loginValidator: data => {
         const ValidateSchema = joi.object({
             username: joi.string()
@@ -37,6 +37,25 @@ const Validator = {
         
         return ValidateSchema.validateAsync(data)
     }
+    /*
+    updateValidator: data => {
+        const ValidateSchema = joi.object({
+            fullname: joi.string()
+                .min(7),
+            username: joi.string()
+                .min(7),
+            email: joi.string()
+                .min(7)
+                .email(),
+            phone: joi.string()
+                .pattern(new RegExp('^[0-9]{8}$')),
+            password: joi.string()
+                .min(7)
+        })
+
+        return ValidateSchema.validateAsync(data)
+    }
+    */
 }
 
 module.exports = Validator

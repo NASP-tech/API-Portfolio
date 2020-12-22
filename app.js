@@ -3,8 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-//const { Mongoose } = require('mongoose');
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
 
 var app = express();
 
@@ -20,17 +19,17 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true,
   useFindAndModify: false
 })
-.then(() => {
-  console.log("Connected to DB")
-})
-.catch((err) => {
-  debug(err);
-  process.exit(1);
-})
+  .then(() => {
+      console.log("Connected to DB");
+  })
+  .catch((err) => {
+      debug(err);
+      process.exit(1);
+  });
 
 var userRoutes = require('./routes/UserRoutes')
 
-//http://localhost:3000/users
+// http://localhost:3000/users
 app.use('/users', userRoutes)
 
 // catch 404 and forward to error handler
